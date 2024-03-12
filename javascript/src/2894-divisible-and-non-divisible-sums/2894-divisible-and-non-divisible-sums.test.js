@@ -1,4 +1,4 @@
-const f = require('2894-divisible-and-non-divisible-sums');
+const f = require('./2894-divisible-and-non-divisible-sums');
 
 test('should difference of sums function returns "19"', () => {
     const n = 10;
