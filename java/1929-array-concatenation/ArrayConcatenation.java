@@ -10,9 +10,6 @@ ans[i + n] == nums[i] for 0 <= i < n (0-indexed). Specifically, ans is the conca
 Return the array ans.
  */
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 /**
  * @param {number[]} nums
  * @return {number[]}
@@ -26,9 +23,14 @@ Time complexity: O(n)
 public class ArrayConcatenation {
 
     public static void main(String[] args) {
-        int[] arr = getConcatenation(new int[]{1, 2, 1});
+        int[] sample1 = getConcatenation(new int[]{1, 2, 1});
+        int[] sample2 = getConcatenation(new int[]{1, 3, 2, 1});
 
-        for (Integer i : arr) {
+        for (int i : sample1) {
+            System.out.println(i);
+        }
+
+        for (int i : sample2) {
             System.out.println(i);
         }
     }
