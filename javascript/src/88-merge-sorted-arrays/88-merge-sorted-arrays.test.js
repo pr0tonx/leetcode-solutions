@@ -1,49 +1,34 @@
-/*
-https://leetcode.com/problems/merge-sorted-array/description/
- */
+const f = require('./88-merge-sorted-arrays');
 
-/*
-Description:
+test('should merge function returns "[1,2,2,3,5,6]"', () => {
+  const nums1 = [1, 2, 3, 0, 0, 0];
+  const m = 3;
+  const nums2 = [2, 5, 6];
+  const n = 3;
 
-You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing
-the number of elements in nums1 and nums2 respectively.
-Merge nums1 and nums2 into a single array sorted in non-decreasing order.
-The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To
-accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged,
-and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
- */
+  const res = f.merge(nums1, m, nums2, n);
 
-/**
- * @param {number[]} nums1
- * @param {number} m
- * @param {number[]} nums2
- * @param {number} n
- * @return {void} Do not return anything, modify nums1 in-place instead.
- */
+  expect(res).toBe(undefined);
+});
 
-/*
-Space complexity: O(m + n)
-Time complexity: O(1)
- */
+test('should merge function returns "[1]"', () => {
+  const nums1 = [1];
+  const m = 1;
+  const nums2 = [];
+  const n = 0;
 
-const merge = function(nums1, m, nums2, n) {
-  let i = m - 1;
-  let j = n - 1;
-  let k = m + n - 1;
+  const res = f.merge(nums1, m, nums2, n);
 
-  while (i >= 0 && j >= 0) {
-    if (nums1[i] > nums2[j]) {
-      nums1[k--] = nums1[i--];
-    } else {
-      nums1[k--] = nums2[j--];
-    }
-  }
+  expect(res).toEqual(undefined);
+});
 
-  while (j >= 0) {
-    nums1[k--] = nums2[j--];
-  }
-};
+test('should merge function returns "[1]"', () => {
+  const nums1 = [0];
+  const m = 0;
+  const nums2 = [1];
+  const n = 1;
 
-module.exports = {
-  merge
-}
+  const res = f.merge(nums1, m, nums2, n);
+
+  expect(res).toEqual(undefined);
+});
