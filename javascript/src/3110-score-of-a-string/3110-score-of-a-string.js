@@ -28,9 +28,6 @@ const scoreOfString = function(s) {
   return sum;
 };
 
-console.log(scoreOfString("hello"));
-console.log(scoreOfString('zaz'));
-
 module.exports = {
   scoreOfString
 }
